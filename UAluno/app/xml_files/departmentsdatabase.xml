@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<departamentos>
+
+	<item>
+		<guid>0</guid>
+		<nome>@UA_online</nome>
+		<sigla>uaonline</sigla>
+	</item> 
+	<item>
+		<guid>97</guid>
+		<nome>40anosUA</nome>
+		<sigla>40anos</sigla>
+	</item> 
+	<item>
+		<guid>69</guid>
+		<nome>Administração</nome>
+		<sigla>adm</sigla>
+	</item> 
+	<item>
+		<guid>37</guid>
+		<nome>Associação Académica da Universidade de Aveiro</nome>
+		<sigla>aauav</sigla>
+	</item> 
+	<item>
+		<guid>62</guid>
+		<nome>Associação de Antigos Alunos da Universidade de Aveiro</nome>
+		<sigla>aaaua</sigla>
+	</item> 
+	<item>
+		<guid>79</guid>
+		<nome>Associação de Electrónica, Telecomunicações e Telemática da Universidade de Aveiro</nome>
+		<sigla>aettua</sigla>
+	</item> 
+	<item>
+		<guid>92</guid>
+		<nome>Associação Gestão Planeamento em Turismo</nome>
+		<sigla>agptua</sigla>
+	</item> 
+	<item>
+		<guid>58</guid>
+		<nome>Biblioteca do ISCA</nome>
+		<sigla>bibisca</sigla>
+	</item> 
+	<item>
+		<guid>80</guid>
+		<nome>Centro de Competência da Universidade de Aveiro</nome>
+		<sigla>cctic</sigla>
+	</item> 
+	<item>
+		<guid>63</guid>
+		<nome>Centro de Estudos de Jazz</nome>
+		<sigla>cej</sigla>
+	</item> 
+	<item>
+		<guid>54</guid>
+		<nome>Centro de Estudos do Ambiente e do Mar</nome>
+		<sigla>cesam</sigla>
+	</item> 
+	<item>
+		<guid>32</guid>
+		<nome>Centro de Informática e Telecomunicações</nome>
+		<sigla>cicua</sigla>
+	</item> 
+	<item>
+		<guid>64</guid>
+		<nome>Centro de Investigação em Materiais Cerâmicos e Compósitos</nome>
+		<sigla>ciceco</sigla>
+	</item> 
+	<item>
+		<guid>114</guid>
+		<nome>Centro de Línguas, Literaturas e Culturas</nome>
+		<sigla>cllc</sigla>
+	</item> 
+	<item>
+		<guid>33</guid>
+		<nome>Centro Multimédia e de Ensino a Distância</nome>
+		<sigla>cemed</sigla>
+	</item> 
+	<item>
+		<guid>96</guid>
+		<nome>CIDTFF</nome>
+		<sigla>cidtff</sigla>
+	</item> 
+	<item>
+		<guid>103</guid>
+		<nome>conferencia PDLP</nome>
+		<sigla>pdlp</sigla>
+	</item> 
+	<item>
+		<guid>72</guid>
+		<nome>Conselho Científico</nome>
+		<sigla>conselhocientifico</sigla>
+	</item> 
+	<item>
+		<guid>112</guid>
+		<nome>Conselho de Ética e Deontologia</nome>
+		<sigla>ced</sigla>
+	</item> 
+	<item>
+		<guid>71</guid>
+		<nome>Conselho Geral</nome>
+		<sigla>conselhogeral</sigla>
+	</item> 
+	<item>
+		<guid>70</guid>
+		<nome>Conselho Pedagógico</nome>
+		<sigla>conselhopedagogico</sigla>
+	</item> 
+	<item>
+		<guid>74</guid>
+		<nome>Coopdev</nome>
+		<sigla>coopdev</sigla>
+	</item> 
+	<item>
+		<guid>1</guid>
+		<nome>Departamento de Ambiente e Ordenamento</nome>
+		<sigla>dao</sigla>
+	</item> 
+	<item>
+		<guid>2</guid>
+		<nome>Departamento de Biologia</nome>
+		<sigla>dbua</sigla>
+	</item> 
+	<item>
+		<guid>16</guid>
+		<nome>Departamento de Ciências Médicas</nome>
+		<sigla>dcm</sigla>
+	</item> 
+	<item>
+		<guid>17</guid>
+		<nome>Departamento de Ciências Sociais, Políticas e do Território</nome>
+		<sigla>dcspt</sigla>
+	</item> 
+	<item>
+		<guid>4</guid>
+		<nome>Departamento de Comunicação e Arte</nome>
+		<sigla>deca</sigla>
+	</item> 
+	<item>
+		<guid>6</guid>
+		<nome>Departamento de Economia, Gestão, Engenharia Industrial e Turismo</nome>
+		<sigla>degeit</sigla>
+	</item> 
+	<item>
+		<guid>85</guid>
+		<nome>Departamento de Educação e Psicologia</nome>
+		<sigla>dep</sigla>
+	</item> 
+	<item>
+		<guid>7</guid>
+		<nome>Departamento de Eletrónica, Telecomunicações e Informática</nome>
+		<sigla>deti</sigla>
+	</item> 
+	<item>
+		<guid>15</guid>
+		<nome>Departamento de Engenharia Civil</nome>
+		<sigla>decivil</sigla>
+	</item> 
+	<item>
+		<guid>8</guid>
+		<nome>Departamento de Engenharia de Materiais e Cerâmica</nome>
+		<sigla>demc</sigla>
+	</item> 
+	<item>
+		<guid>9</guid>
+		<nome>Departamento de Engenharia Mecânica</nome>
+		<sigla>dem</sigla>
+	</item> 
+	<item>
+		<guid>10</guid>
+		<nome>Departamento de Física</nome>
+		<sigla>fis</sigla>
+	</item> 
+	<item>
+		<guid>11</guid>
+		<nome>Departamento de Geociências</nome>
+		<sigla>degeo</sigla>
+	</item> 
+	<item>
+		<guid>12</guid>
+		<nome>Departamento de Línguas e Culturas</nome>
+		<sigla>dlc</sigla>
+	</item> 
+	<item>
+		<guid>13</guid>
+		<nome>Departamento de Matemática</nome>
+		<sigla>dmat</sigla>
+	</item> 
+	<item>
+		<guid>14</guid>
+		<nome>Departamento de Química</nome>
+		<sigla>dqua</sigla>
+	</item> 
+	<item>
+		<guid>113</guid>
+		<nome>Ensino</nome>
+		<sigla>ensino</sigla>
+	</item> 
+	<item>
+		<guid>93</guid>
+		<nome>Erasmus - GRI</nome>
+		<sigla>eramus</sigla>
+	</item> 
+	<item>
+		<guid>18</guid>
+		<nome>Escola Superior Aveiro Norte</nome>
+		<sigla>esan</sigla>
+	</item> 
+	<item>
+		<guid>19</guid>
+		<nome>Escola Superior de Saúde</nome>
+		<sigla>essua</sigla>
+	</item> 
+	<item>
+		<guid>20</guid>
+		<nome>Escola Superior de Tecnologia e Gestão de Águeda</nome>
+		<sigla>estga</sigla>
+	</item> 
+	<item>
+		<guid>38</guid>
+		<nome>Fábrica Centro Ciência Viva de Aveiro</nome>
+		<sigla>fabrica</sigla>
+	</item> 
+	<item>
+		<guid>43</guid>
+		<nome>Festivais de Outono</nome>
+		<sigla>fo</sigla>
+	</item> 
+	<item>
+		<guid>94</guid>
+		<nome>Formação</nome>
+		<sigla>formacao</sigla>
+	</item> 
+	<item>
+		<guid>29</guid>
+		<nome>Gabinete de Estágios e Saídas Profissionais</nome>
+		<sigla>sacgesp
+</sigla>
+	</item> 
+	<item>
+		<guid>30</guid>
+		<nome>Gabinete de Gestão de Informação</nome>
+		<sigla>gagi</sigla>
+	</item> 
+	<item>
+		<guid>31</guid>
+		<nome>Gabinete de Planeamento Estratégico</nome>
+		<sigla>gpe</sigla>
+	</item> 
+	<item>
+		<guid>41</guid>
+		<nome>Gabinete de Relações Internacionais</nome>
+		<sigla>gri</sigla>
+	</item> 
+	<item>
+		<guid>68</guid>
+		<nome>Gabinete Pedagógico</nome>
+		<sigla>pedagogico</sigla>
+	</item> 
+	<item>
+		<guid>46</guid>
+		<nome>GLUA</nome>
+		<sigla>glua</sigla>
+	</item> 
+	<item>
+		<guid>76</guid>
+		<nome>GOVCOPP</nome>
+		<sigla>govcopp</sigla>
+	</item> 
+	<item>
+		<guid>75</guid>
+		<nome>Grupo de Emissões, Modelação e Alterações Climáticas</nome>
+		<sigla>gemac</sigla>
+	</item> 
+	<item>
+		<guid>102</guid>
+		<nome>Grupo UAriadeaveiro</nome>
+		<sigla>riadeaveiro</sigla>
+	</item> 
+	<item>
+		<guid>45</guid>
+		<nome>GrupUnave</nome>
+		<sigla>grupunave</sigla>
+	</item> 
+	<item>
+		<guid>57</guid>
+		<nome>Homepage UA</nome>
+		<sigla>ua</sigla>
+	</item> 
+	<item>
+		<guid>115</guid>
+		<nome>IBIMED</nome>
+		<sigla>ibimed</sigla>
+	</item> 
+	<item>
+		<guid>56</guid>
+		<nome>Incubadora de Empresas</nome>
+		<sigla>ie</sigla>
+	</item> 
+	<item>
+		<guid>48</guid>
+		<nome>Instituto de Engenharia Electrónica e Telemática de Aveiro
+</nome>
+		<sigla>ieeta</sigla>
+	</item> 
+	<item>
+		<guid>47</guid>
+		<nome>Instituto de Telecomunicações</nome>
+		<sigla>it</sigla>
+	</item> 
+	<item>
+		<guid>66</guid>
+		<nome>Instituto do Ambiente e Desenvolvimento</nome>
+		<sigla>idad</sigla>
+	</item> 
+	<item>
+		<guid>21</guid>
+		<nome>Instituto Superior de Contabilidade e Administração da Universidade de Aveiro</nome>
+		<sigla>iscaua</sigla>
+	</item> 
+	<item>
+		<guid>98</guid>
+		<nome>Intervenção Comunitária</nome>
+		<sigla>ic</sigla>
+	</item> 
+	<item>
+		<guid>35</guid>
+		<nome>Investigação da UA</nome>
+		<sigla>ii</sigla>
+	</item> 
+	<item>
+		<guid>100</guid>
+		<nome>INVTUR</nome>
+		<sigla>invtur</sigla>
+	</item> 
+	<item>
+		<guid>52</guid>
+		<nome>Laboratório Central de Análises</nome>
+		<sigla>lca</sigla>
+	</item> 
+	<item>
+		<guid>67</guid>
+		<nome>Linha da UA</nome>
+		<sigla>lua</sigla>
+	</item> 
+	<item>
+		<guid>87</guid>
+		<nome>Maiores de 23</nome>
+		<sigla>m23</sigla>
+	</item> 
+	<item>
+		<guid>105</guid>
+		<nome>Plataforma Tecnológica Agroalimentar</nome>
+		<sigla>pt-agroalimentar</sigla>
+	</item> 
+	<item>
+		<guid>108</guid>
+		<nome>Plataforma Tecnológica Comunidades Inteligentes/ Connected Communities</nome>
+		<sigla>pt-ci</sigla>
+	</item> 
+	<item>
+		<guid>107</guid>
+		<nome>Plataforma Tecnológica da Bicicleta e Mobilidade Suave</nome>
+		<sigla>pt-bms</sigla>
+	</item> 
+	<item>
+		<guid>110</guid>
+		<nome>Plataforma Tecnológica da Floresta</nome>
+		<sigla>pt-floresta</sigla>
+	</item> 
+	<item>
+		<guid>104</guid>
+		<nome>Plataforma Tecnológica do Mar</nome>
+		<sigla>pt-mar</sigla>
+	</item> 
+	<item>
+		<guid>99</guid>
+		<nome>Plataforma Tecnológica dos Moldes</nome>
+		<sigla>pt-moldes</sigla>
+	</item> 
+	<item>
+		<guid>109</guid>
+		<nome>Plataforma Tecnológica Habitat@UA</nome>
+		<sigla>pt-habitat</sigla>
+	</item> 
+	<item>
+		<guid>106</guid>
+		<nome>Plataforma Tecnológica Multidisciplinar Alta Pressão</nome>
+		<sigla>pt-map</sigla>
+	</item> 
+	<item>
+		<guid>88</guid>
+		<nome>Portal do Antigo Aluno</nome>
+		<sigla>gaa</sigla>
+	</item> 
+	<item>
+		<guid>53</guid>
+		<nome>Projecto Matemática Ensino</nome>
+		<sigla>pmate</sigla>
+	</item> 
+	<item>
+		<guid>91</guid>
+		<nome>Química Orgânica, produtos naturais e agroalimentares</nome>
+		<sigla>qopna</sigla>
+	</item> 
+	<item>
+		<guid>77</guid>
+		<nome>Reitor</nome>
+		<sigla>reitor</sigla>
+	</item> 
+	<item>
+		<guid>22</guid>
+		<nome>Reitoria</nome>
+		<sigla>rt</sigla>
+	</item> 
+	<item>
+		<guid>84</guid>
+		<nome>Research@UA page</nome>
+		<sigla>r@ua</sigla>
+	</item> 
+	<item>
+		<guid>116</guid>
+		<nome>RISCO</nome>
+		<sigla>risco</sigla>
+	</item> 
+	<item>
+		<guid>83</guid>
+		<nome>SBIDM - Arquivo</nome>
+		<sigla>sbidm-arquivo</sigla>
+	</item> 
+	<item>
+		<guid>24</guid>
+		<nome>SBIDM - Biblioteca</nome>
+		<sigla>sbidm-biblio</sigla>
+	</item> 
+	<item>
+		<guid>82</guid>
+		<nome>SBIDM - Museu</nome>
+		<sigla>sbidm-museu</sigla>
+	</item> 
+	<item>
+		<guid>81</guid>
+		<nome>SBIDM - Portal</nome>
+		<sigla>sbidm-portal</sigla>
+	</item> 
+	<item>
+		<guid>28</guid>
+		<nome>Serviços de Acção Social</nome>
+		<sigla>sas</sigla>
+	</item> 
+	<item>
+		<guid>26</guid>
+		<nome>Serviços de Comunicação, Imagem e Relações Públicas</nome>
+		<sigla>scirp</sigla>
+	</item> 
+	<item>
+		<guid>23</guid>
+		<nome>Serviços de Gestão Académica</nome>
+		<sigla>sga</sigla>
+	</item> 
+	<item>
+		<guid>27</guid>
+		<nome>Serviços de Gestão Técnica e Logística</nome>
+		<sigla>sgtl</sigla>
+	</item> 
+	<item>
+		<guid>78</guid>
+		<nome>Serviços de Tecnologias de Informação e Comunicação</nome>
+		<sigla>stic</sigla>
+	</item> 
+	<item>
+		<guid>86</guid>
+		<nome>SexLab</nome>
+		<sigla>sexlab</sigla>
+	</item> 
+	<item>
+		<guid>25</guid>
+		<nome>SGRHF - Recursos Financeiros</nome>
+		<sigla>sgrhf-rf</sigla>
+	</item> 
+	<item>
+		<guid>42</guid>
+		<nome>SGRHF - Recursos Humanos</nome>
+		<sigla>sgrhf-rh</sigla>
+	</item> 
+	<item>
+		<guid>90</guid>
+		<nome>TEMA - Centre for Mechanical Technology and Automation</nome>
+		<sigla>tema</sigla>
+	</item> 
+	<item>
+		<guid>95</guid>
+		<nome>UA Edições</nome>
+		<sigla>edicoes</sigla>
+	</item> 
+	<item>
+		<guid>111</guid>
+		<nome>UA2020</nome>
+		<sigla>ua2020</sigla>
+	</item> 
+	<item>
+		<guid>44</guid>
+		<nome>UATEC</nome>
+		<sigla>uatec</sigla>
+	</item> 
+	<item>
+		<guid>39</guid>
+		<nome>UNAVE</nome>
+		<sigla>unave</sigla>
+	</item> 
+	<item>
+		<guid>89</guid>
+		<nome>Unidade de Saúde de Medicina</nome>
+		<sigla>usm</sigla>
+	</item> 
+	<item>
+		<guid>40</guid>
+		<nome>Unidade Integrada de Formação Continuada</nome>
+		<sigla>uinfoc</sigla>
+	</item> 
+</departamentos>

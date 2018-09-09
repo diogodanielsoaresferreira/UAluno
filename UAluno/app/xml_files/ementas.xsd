@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="result" type="resultType"/>
+  <xs:complexType name="itemType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="menusType">
+    <xs:sequence>
+      <xs:element type="menuType" name="menu" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="zone"/>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+  <xs:complexType name="itemsType" mixed="true">
+    <xs:sequence>
+      <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="menuType">
+    <xs:sequence>
+      <xs:element type="itemsType" name="items" maxOccurs="1" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="canteen" />
+    <xs:attribute type="xs:string" name="meal" />
+    <xs:attribute type="xs:string" name="date" />
+    <xs:attribute type="xs:string" name="weekday" />
+    <xs:attribute type="xs:string" name="weekdayNr" />
+    <xs:attribute type="xs:string" name="disabled" />
+  </xs:complexType>
+  <xs:complexType name="resultType">
+    <xs:sequence>
+      <xs:element type="menusType" name="menus" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="request"/>
+    <xs:attribute type="xs:string" name="request_timestamp"/>
+  </xs:complexType>
+</xs:schema>

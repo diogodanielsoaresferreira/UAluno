@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result request="/sas/ementas" request_timestamp="1508537646">
+<menus zone="santiago" type="day">
+  <menu canteen="Refeitório de Santiago" meal="Almoço" date="Fri, 20 Oct 2017 00:29:50 +0100" weekday="Friday" weekdayNr="5" disabled="0">
+  <items>
+    <item name="Sopa">Canja de legumes</item>
+    <item name="Prato normal carne">Feijoada à transmontana com arroz</item>
+    <item name="Prato normal peixe"/>
+    <item name="Prato dieta">Carne de porco cozida com arroz e couve flor</item>
+    <item name="Prato vegetariano"/>
+    <item name="Prato opção">Salmão grelhado com batata cozida</item>
+    <item name="Salada">Buffet de saladas</item>
+    <item name="Diversos">Pão de mistura</item>
+    <item name="Sobremesa">Fruta da época ou doce</item>
+    <item name="Bebida"/>
+  </items>
+</menu>
+  <menu canteen="Refeitório de Santiago" meal="Jantar" date="Fri, 20 Oct 2017 00:29:50 +0100" weekday="Friday" weekdayNr="5" disabled="0">
+  <items>
+    <item name="Sopa">Canja de legumes</item>
+    <item name="Prato normal carne"/>
+    <item name="Prato normal peixe">Bacalhau à narcisa com batata dourada</item>
+    <item name="Prato dieta"/>
+    <item name="Prato vegetariano">Almôndegas de soja</item>
+    <item name="Prato opção"/>
+    <item name="Salada">Buffet de saladas</item>
+    <item name="Diversos">Pão de mistura</item>
+    <item name="Sobremesa">Fruta da época ou doce</item>
+    <item name="Bebida"/>
+  </items>
+</menu>
+  <menu canteen="Refeitório do Crasto" meal="Almoço" date="Fri, 20 Oct 2017 00:29:50 +0100" weekday="Friday" weekdayNr="5" disabled="0">
+  <items>
+    <item name="Sopa">Canja de legumes</item>
+    <item name="Prato normal carne"/>
+    <item name="Prato normal peixe">Pescada à brás</item>
+    <item name="Prato dieta">Caldeirada de soja com algas</item>
+    <item name="Prato vegetariano"/>
+    <item name="Prato opção">Fruta da época ou doce</item>
+    <item name="Salada">Buffet de saladas</item>
+    <item name="Diversos">Bife de peru com cogumelos e arroz de ervilhas</item>
+    <item name="Sobremesa">Pão de mistura</item>
+  </items>
+</menu>
+  <menu canteen="Refeitório do Crasto" meal="Jantar" date="Fri, 20 Oct 2017 00:29:50 +0100" weekday="Friday" weekdayNr="5" disabled="Encerrado - refeições servidas no refeitório de santiago">
+  <items/>
+</menu>
+  <menu canteen="Snack-Bar/Self" meal="Almoço" date="Fri, 20 Oct 2017 00:29:50 +0100" weekday="Friday" weekdayNr="5" disabled="0">
+  <items>
+    <item name="Sopa">Canja de legumes</item>
+    <item name="Prato de carne">Bife de peru com cogumelos e arroz de ervilhas</item>
+    <item name="Prato de peixe">Pescada à brás</item>
+    <item name="Salada">Buffet de saladas</item>
+    <item name="Diversos">Pão de mistura</item>
+    <item name="Sobremesa">Fruta da época ou doce</item>
+    <item name="Bebida"/>
+  </items>
+</menu>
+</menus>
+</result>

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAluno - O portal do aluno na UA</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"><b>U<i>A</b>luno</i></a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    {% block menuNavbar %}
+                        {% if user.authenticated %}
+                            <li><a href="{% url 'home' %}">Início</a></li>
+                            <li><a href="{% url 'metereologia' %}">Metereologia</a></li>
+                            <li><a href="{% url 'ementas' %}">Ementas</a></li>
+                            <li><a href="{% url 'noticias' %}">Notícias</a></li>
+                            <li><a href="{% url 'notas' %}">Notas</a></li>
+                        {% endif %}
+                    {% endblock %}
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+
+
+    {% if user.is_authenticated %}
+        <div class="modal-body row">
+            <div class="container col-md-10"></div>
+            <div class="container col-md-2">
+                <div class="row chat-window col-xs-5 col-md-2" id="chat_window_1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading top-bar">
+                                <div class="col-md-8 col-xs-8">
+                                    <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> <b>U<i>A</b>luno</i> chat</h3>
+                                </div>
+                                <div class="col-md-4 col-xs-4" style="text-align: right;">
+                                    <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+                                </div>
+                            </div>
+
+                            <div id="chat_message_div" class="panel-body msg_container_base">
+                                {% autoescape off %}
+                                    {{ chat }}
+                                {% endautoescape %}
+                            </div>
+                            <div class="panel-footer">
+                                <div class="input-group">
+                                    <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Escreva a sua mensagem aqui..." />
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-primary btn-sm" id="btn-chat">Enviar</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="container body-content">
+        {% block content %}{% endblock %}
+            <hr/>
+            <footer>
+                <p>&copy; {{ year }} - <b>U<i>A</b>luno</i></p>
+            </footer>
+        </div>
+
+</div>
+
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+    <script src="{% static 'app/scripts/chat.js' %}"></script>
+    <script src="{% static 'app/scripts/django_helpers.js' %}"></script>
+    <script src="{% static 'app/scripts/noticias.js' %}"></script>
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

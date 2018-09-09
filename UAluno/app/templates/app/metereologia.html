@@ -1,0 +1,134 @@
+{% extends "app/layout.html" %}
+
+{% block menuNavbar %}
+    <li><a href="{% url 'home' %}">Início</a></li>
+    <li class="active"><a href="{% url 'metereologia' %}">Metereologia</a></li>
+    <li><a href="{% url 'ementas' %}">Ementas</a></li>
+    <li><a href="{% url 'noticias' %}">Notícias</a></li>
+    <li><a href="{% url 'notas' %}">Notas</a></li>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+    <div class="row">
+        <div class="col-md-9">
+            <div class="page-header">
+                <h1 id="{{ title }}">{{ title }}</h1>
+                <p class="lead">Informação sobre as condições metereologicas da cidade de Aveiro.</p>
+                <hr />
+            </div>
+        </div>
+        <div class="col-md-9">
+            {% if day_active == 0 %}
+                <h3 class="stitle">Segunda-feira</h3>
+            {% elif day_active == 1 %}
+                <h3 class="stitle">Terça-feira</h3><br>
+            {% elif day_active == 2 %}
+                <h3 class="stitle">Quarta-feira</h3><br>
+            {% elif day_active == 3 %}
+                <h3 class="stitle">Quinta-feira</h3><br>
+            {% elif day_active == 4 %}
+                <h3 class="stitle">Sexta-feira</h3><br>
+            {% elif day_active == 5 %}
+                <h3 class="stitle">Sábado</h3><br>
+            {% elif day_active == 6 %}
+                <h3 class="stitle">Domingo</h3><br>
+            {% endif %}
+
+            {% for f in forecast.forecast %}
+                {% if forloop.counter0 == day_active %}
+                    {% with 'app/weather_icons/'|add:f.symbol|add:'.png' as image_static %}
+                        <figure style="text-align: center">
+                            <img src="{% static image_static %}" style="width:25%;"></img>
+                            <figcaption><b>{{ f.desc }}</b></figcaption>
+                        </figure>
+                    {% endwith %}
+                    <div class="col-sm-6">
+                        <br>
+                        <h4><b>Nascer do sol:</b></h4> <p style="display: inline-block">{{ forecast.rise }}</p>
+                        <h4><b>Pôr do sol:</b></h4> <p style="display: inline-block">{{ forecast.set }}</p>
+                        <h4><b>Temperatura:</b></h4> <p style="display: inline-block">{{ f.temp }} ºC</p>
+                        <h4><b>Temperatura máxima:</b></h4> <p style="display: inline-block">{{ f.maxtemp }} ºC</p>
+                        <h4><b>Temperatura mínima:</b></h4> <p style="display: inline-block">{{ f.mintemp }} ºC</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <br>
+                        <h4><b>Precipitação:</b></h4> <p style="display: inline-block">{{ f.precipitation }}</p>
+                        <h4><b>Nuvens: </b></h4> <p style="display: inline-block">{{ f.clouds }}</p>
+                        <h4><b>Pressão:</b></h4> <p style="display: inline-block">{{ f.pressure }} hPa</p>
+                        <h4><b>Humidade:</b></h4> <p style="display: inline-block">{{ f.humidity }} %</p>
+                        <h4><b>Vento:</b></h4> <p style="display: inline-block">{{ f.windspeedmps }} m/s {% if f.winddirectionname %} para {{ f.winddirectionname }} {% endif %} ({{ f.winddirectiondeg }}º)</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+        <div class="col-md-3">
+            <b>Selecione o dia da semana que pretende ver a metereologia</b><br><br>
+            <ul class="nav nav-pills nav-stacked">
+                {% for content in forecast.forecast %}
+                        {% if content.day_week == 0 %}
+                            {% if day_active == 0 %}
+                                 <li role="presentation" class="active">
+                            {% else %}
+                                <li role="presentation">
+                            {% endif %}
+
+                            <a href="/metereologia/day=0">Segunda-feira
+                        {% elif content.day_week == 1 %}
+                            {% if day_active == 1 %}
+                                <li role="presentation" class="active">
+                            {% else %}
+                                <li role="presentation">
+                            {% endif %}
+
+                            <a href="/metereologia/day=1">Terça-feira
+                        {% elif content.day_week == 2 %}
+                            {% if day_active == 2 %}
+                                <li role="presentation" class="active">
+                            {% else %}
+                                <li role="presentation">
+                            {% endif %}
+
+                            <a href="/metereologia/day=2">Quarta-feira
+                        {% elif content.day_week == 3 %}
+                            {% if day_active == 3 %}
+                                <li role="presentation" class="active">
+                            {% else %}
+                                <li role="presentation">
+                            {% endif %}
+
+                            <a href="/metereologia/day=3">Quinta-feira
+                        {% elif content.day_week == 4 %}
+                            {% if day_active == 4 %}
+                                <li role="presentation" class="active">
+                            {% else %}
+                                <li role="presentation">
+                            {% endif %}
+
+                            <a href="/metereologia/day=4">Sexta-feira
+                        {% elif content.day_week == 5 %}
+                            {% if day_active == 5 %}
+                               <li role="presentation" class="active">
+                            {% else %}
+                                <li role="presentation">
+                            {% endif %}
+
+                            <a href="/metereologia/day=5">Sábado
+                        {% elif content.day_week == 6 %}
+                            {% if day_active == 6 %}
+                                <li role="presentation" class="active">
+                            {% else %}
+                                <li role="presentation">
+                            {% endif %}
+
+                            <a href="/metereologia/day=6">Domingo
+                        {% endif %}
+                        - {{ content.day_year }}
+                    </a></li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+{% endblock %}

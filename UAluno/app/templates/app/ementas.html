@@ -1,0 +1,93 @@
+{% extends "app/layout.html" %}
+
+{% block menuNavbar %}
+    <li><a href="{% url 'home' %}">Início</a></li>
+    <li><a href="{% url 'metereologia' %}">Metereologia</a></li>
+    <li class="active"><a href="{% url 'ementas' %}">Ementas</a></li>
+    <li><a href="{% url 'noticias' %}">Notícias</a></li>
+    <li><a href="{% url 'notas' %}">Notas</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-9">
+            <div class="page-header">
+                <h1 id="{{ title }}">{{ title }}</h1>
+                <p class="lead">Informação sobre as ementas dos refeitórios, snack-bar e cantinas da UA.</p>
+                <hr />
+            </div>
+        </div>
+        <div class="col-md-9">
+            {% if day == "Monday" %}
+                <h3 class="stitle">Segunda-feira</h3><br>
+            {% elif day == "Tuesday" %}
+                <h3 class="stitle">Terça-feira</h3><br>
+            {% elif day == "Wednesday" %}
+                <h3 class="stitle">Quarta-feira</h3><br>
+            {% elif day == "Thursday" %}
+                <h3 class="stitle">Quinta-feira</h3><br>
+            {% elif day == "Friday" %}
+                <h3 class="stitle">Sexta-feira</h3><br>
+            {% elif day == "Saturday" %}
+                <h3 class="stitle">Sábado</h3><br>
+            {% elif day == "Sunday" %}
+                <h3 class="stitle">Domingo</h3><br>
+            {% endif %}
+            {% for eday, ementalist in ementa.items %}
+                {% if eday == day %}
+                    {% for canteen, value in ementalist.items %}
+                        {% if value|length > 0 %}
+                            {% for meal, item in value.items %}
+                                {% if item|length > 0 %}
+                                    {% if forloop.first %}
+                                        <h3><b>{{ canteen }}</b></h3><br>
+                                    {% endif %}
+                                    <h4><b>{{ meal }}</b></h4>
+                                    {% for i,v in item.items %}
+                                        {% if v != None %}
+                                            <p>{{ i }} - {{ v }}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <br>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                    <br><br>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+
+        <div class="col-md-3">
+            <b>Selecione o dia da semana que pretende ver as ementas</b>
+            <br>
+            <br>
+            <ul class="nav nav-pills nav-stacked">
+                {% for days, value in ementa.items %}
+                    {% if days == day %}
+                        <li role="presentation" class="active" >
+                    {% else %}
+                        <li role="presentation">
+                    {% endif %}
+                    {% if days == "Monday" %}
+                        <a href="/ementas/day=Monday">Segunda-feira
+                    {% elif days == "Tuesday" %}
+                        <a href="/ementas/day=Tuesday">Terça-feira
+                    {% elif days == "Wednesday" %}
+                        <a href="/ementas/day=Wednesday">Quarta-feira
+                    {% elif days == "Thursday" %}
+                        <a href="/ementas/day=Thursday">Quinta-feira
+                    {% elif days == "Friday" %}
+                        <a href="/ementas/day=Friday">Sexta-feira
+                    {% elif days == "Saturday" %}
+                        <a href="/ementas/day=Saturday">Sábado
+                    {% elif days == "Sunday" %}
+                        <a href="/ementas/day=Sunday">Domingo
+                    {% endif %}
+                    </a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

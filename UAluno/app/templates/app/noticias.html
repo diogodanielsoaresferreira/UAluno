@@ -1,0 +1,55 @@
+{% extends "app/layout.html" %}
+
+{% block menuNavbar %}
+    <li><a href="{% url 'home' %}">Início</a></li>
+	<li><a href="{% url 'metereologia' %}">Metereologia</a></li>
+    <li><a href="{% url 'ementas' %}">Ementas</a></li>
+    <li class="active"><a href="{% url 'noticias' %}">Notícias</a></li>
+    <li><a href="{% url 'notas' %}">Notas</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-9">
+            <div class="page-header">
+                <h1 id="{{ title }}">{{ title }}</h1>
+                <p class="lead">Informação fornecida pelo Jornal Online da UA.</p>
+                <hr />
+            </div>
+        </div>
+        <div class="col-md-9">
+            {% for singlenew in news %}
+                {% if forloop.counter0|divisibleby:"2" is True %}
+                    <div class="clearfix visible-lg-block"></div>
+                {% endif %}
+                <div class="col-md-12">
+                    <div class="panel panel-success newspanel">
+                        <div class="panel-heading"><b>{{ singlenew.title }}</b></div>
+                        <div class="panel-body">
+                            {% if singlenew.description.1 %}
+                                {% autoescape off %}
+                                {{ singlenew.description.1 }}
+                                {% endautoescape %}
+                                <br>
+                                <br>
+                            {% endif %}
+                            {{ singlenew.description.0 }}
+                        </div>
+                        <div class="panel-footer"><small>Ver notícia na íntegra: <u><a href="{{ singlenew.link }}" style="color:black;">{{ singlenew.link }}</a></u></small></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-3">
+            <b>Selecione uma categoria para ver os seus destaques</b><br><br>
+            <select id="selectFilter" style="max-width: 300px">
+                {% for cat in categories %}
+                    <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <button id="filterButton" onclick="filterNoticias();">Pesquisar</button>
+        </div>
+    </div>
+{% endblock %}

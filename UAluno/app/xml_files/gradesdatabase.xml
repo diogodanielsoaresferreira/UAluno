@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student id="1">
+        <course name="IHC" ects="6" area="informática" year="3" semester="2">
+            <grade>18</grade>
+        </course>
+
+        <course name="LFA" ects="6" area="informática" year="2" semester="1">
+            <grade>17</grade>
+        </course>
+    </student>
+    <student id="2">
+        <course name="Programação I" ects="6" area="informática" year="1" semester="1">
+            <grade>19</grade>
+        </course>
+
+        <course name="Programação II" ects="8" area="informática" year="1" semester="2">
+            <grade>18</grade>
+        </course>
+    </student>
+</students>

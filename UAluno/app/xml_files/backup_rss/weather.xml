@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weatherdata>
+	<location>
+		<name>Aveiro</name>
+		<type></type>
+		<country>PT</country>
+		<timezone></timezone>
+		<location altitude="0" latitude="40.6443" longitude="-8.6456" geobase="geonames" geobaseid="2742611"></location>
+	</location>
+	<credit></credit>
+	<meta>
+		<lastupdate></lastupdate>
+		<calctime>0.0088</calctime>
+		<nextupdate></nextupdate>
+	</meta>
+	<sun rise="2017-10-14T06:45:15" set="2017-10-14T17:54:55"></sun>
+	<forecast>
+		<time day="2017-10-14">
+			<symbol number="801" name="few clouds" var="02d"></symbol>
+			<precipitation></precipitation>
+			<windDirection deg="95" code="E" name="East"></windDirection>
+			<windSpeed mps="1.21" name="Calm"></windSpeed>
+			<temperature day="301.15" min="294.79" max="303.54" night="294.79" eve="298.66" morn="301.15"></temperature>
+			<pressure unit="hPa" value="1002.61"></pressure>
+			<humidity value="59" unit="%"></humidity>
+			<clouds value="few clouds" all="24" unit="%"></clouds>
+		</time>
+		<time day="2017-10-15">
+			<symbol number="800" name="sky is clear" var="01d"></symbol>
+			<precipitation></precipitation>
+			<windDirection deg="156" code="SSE" name="South-southeast"></windDirection>
+			<windSpeed mps="2.91" name="Light breeze"></windSpeed>
+			<temperature day="300.5" min="291.89" max="300.5" night="294" eve="297.6" morn="291.89"></temperature>
+			<pressure unit="hPa" value="998.28"></pressure>
+			<humidity value="43" unit="%"></humidity>
+			<clouds value="clear sky" all="0" unit="%"></clouds>
+		</time>
+		<time day="2017-10-16">
+			<symbol number="502" name="heavy intensity rain" var="10d"></symbol>
+			<precipitation value="14.06" type="rain"></precipitation>
+			<windDirection deg="346" code="NNW" name="North-northeast"></windDirection>
+			<windSpeed mps="1.24" name="Calm"></windSpeed>
+			<temperature day="288.72" min="286.59" max="289.28" night="286.59" eve="288.1" morn="289.28"></temperature>
+			<pressure unit="hPa" value="1002.41"></pressure>
+			<humidity value="100" unit="%"></humidity>
+			<clouds value="overcast clouds" all="92" unit="%"></clouds>
+		</time>
+		<time day="2017-10-17">
+			<symbol number="502" name="heavy intensity rain" var="10d"></symbol>
+			<precipitation value="14.08" type="rain"></precipitation>
+			<windDirection deg="193" code="SSW" name="South-southwest"></windDirection>
+			<windSpeed mps="2.25" name="Light breeze"></windSpeed>
+			<temperature day="289.68" min="282.27" max="289.68" night="287.72" eve="287.69" morn="282.27"></temperature>
+			<pressure unit="hPa" value="1000.56"></pressure>
+			<humidity value="79" unit="%"></humidity>
+			<clouds value="overcast clouds" all="88" unit="%"></clouds>
+		</time>
+		<time day="2017-10-18">
+			<symbol number="502" name="heavy intensity rain" var="10d"></symbol>
+			<precipitation value="35.63" type="rain"></precipitation>
+			<windDirection deg="266" code="W" name="West"></windDirection>
+			<windSpeed mps="7.78" name="Moderate breeze"></windSpeed>
+			<temperature day="290.96" min="289.83" max="290.96" night="290.61" eve="290.59" morn="289.83"></temperature>
+			<pressure unit="hPa" value="1018.64"></pressure>
+			<humidity value="0" unit="%"></humidity>
+			<clouds value="few clouds" all="13" unit="%"></clouds>
+		</time>
+		<time day="2017-10-19">
+			<symbol number="501" name="moderate rain" var="10d"></symbol>
+			<precipitation value="7.16" type="rain"></precipitation>
+			<windDirection deg="230" code="SW" name="Southwest"></windDirection>
+			<windSpeed mps="4.94" name="Gentle Breeze"></windSpeed>
+			<temperature day="291.06" min="290.46" max="291.06" night="290.46" eve="290.55" morn="290.73"></temperature>
+			<pressure unit="hPa" value="1023.24"></pressure>
+			<humidity value="0" unit="%"></humidity>
+			<clouds value="broken clouds" all="74" unit="%"></clouds>
+		</time>
+		<time day="2017-10-20">
+			<symbol number="501" name="moderate rain" var="10d"></symbol>
+			<precipitation value="8.74" type="rain"></precipitation>
+			<windDirection deg="343" code="NNW" name="North-northeast"></windDirection>
+			<windSpeed mps="3.23" name="Light breeze"></windSpeed>
+			<temperature day="290.58" min="287.83" max="290.58" night="287.83" eve="289.55" morn="290.35"></temperature>
+			<pressure unit="hPa" value="1024.47"></pressure>
+			<humidity value="0" unit="%"></humidity>
+			<clouds value="few clouds" all="20" unit="%"></clouds>
+		</time>
+	</forecast>
+</weatherdata>

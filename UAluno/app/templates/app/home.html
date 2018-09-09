@@ -1,0 +1,335 @@
+{% extends "app/layout.html" %}
+
+{% block menuNavbar %}
+    <li class="active"><a href="{% url 'home' %}">Início</a></li>
+    <li><a href="{% url 'metereologia' %}">Metereologia</a></li>
+    <li><a href="{% url 'ementas' %}">Ementas</a></li>
+    <li><a href="{% url 'noticias' %}">Notícias</a></li>
+    <li><a href="{% url 'notas' %}">Notas</a></li>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1 id="{{ title }}">{{ title }}</h1>
+                <p class="lead">Informações relevantes para o aluno relativamente à UA.</p>
+                <hr />
+            </div>
+            <div class="jumbotron">
+                <h3>Metereologia em Aveiro</h3>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6"><h4><b>Hoje</b></h4>
+                        {% with 'app/weather_icons/'|add:forecast.forecast.0.symbol|add:'.png' as image_static %}
+                            <figure style="text-align: center">
+                                <img src="{% static image_static %}" style="width:25%;"></img>
+                                <figcaption><b>{{ forecast.forecast.0.desc }}</b></figcaption>
+                            </figure>
+
+                        {% endwith %}
+                        <br>
+                        <ul>
+                            <li><h5><b>Temperatura: {{ forecast.forecast.0.temp }} ºC</b></h5></li>
+                            <li>Temperatura máxima: {{ forecast.forecast.0.maxtemp }} ºC</li>
+                            <li>Temperatura mínima: {{ forecast.forecast.0.mintemp }} ºC</li>
+                            <li>Nascer do sol: {{ forecast.rise }}</li>
+                            <li>Pôr do sol: {{ forecast.set }}</li>
+                            <li>Precipitação: {{ forecast.forecast.0.precipitation }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6"><h4><b>Amanhã</b></h4>
+                        {% with 'app/weather_icons/'|add:forecast.forecast.1.symbol|add:'.png' as image_static %}
+                            <figure style="text-align: center">
+                                <img src="{% static image_static %}" style="width:25%;"></img>
+                                <figcaption><b>{{ forecast.forecast.1.desc }}</b></figcaption>
+                            </figure>
+                        {% endwith %}
+                        <br>
+                        <ul>
+                            <li><h5><b>Temperatura: {{ forecast.forecast.1.temp }} ºC</b></h5></li>
+                            <li>Temperatura máxima: {{ forecast.forecast.1.maxtemp }} ºC</li>
+                            <li>Temperatura mínima: {{ forecast.forecast.1.mintemp }} ºC</li>
+                            <li>Nascer do sol: {{ forecast.rise }}</li>
+                            <li>Pôr do sol: {{ forecast.set }}</li>
+                            <li>Precipitação: {{ forecast.forecast.1.precipitation }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <p><a class="btn btn-primary btn-sm pull-right" href="/metereologia">Ver previsão para os próximos 5 dias</a></p>
+            </div>
+            <br>
+            <div class="jumbotron">
+                <h3>Próximas ementas das cantinas da Universidade de Aveiro</h3>
+                <hr />
+                <ul class="nav nav-tabs">
+
+                    <li
+                            {% if main_plates.0|length > 0 %}
+                                {% if datev|date:"w" == "1" %}
+                                    class="active"
+                                {% endif %}
+                                ><a data-toggle="tab"
+                            {% else %}
+                                ><a style="color:grey;"
+                            {% endif %}
+                        href="#home">Segunda-feira</a></li>
+                    <li
+                            {% if main_plates.1|length > 0 %}
+                                {% if datev|date:"w" == "2" %}
+                                    class="active"
+                                {% endif %}
+                                ><a data-toggle="tab"
+                            {% else %}
+                                ><a style="color:grey;"
+                            {% endif %}
+                            href="#menu1">Terça-feira</a></li>
+                    <li
+
+                            {% if main_plates.2|length > 0 %}
+                                {% if datev|date:"w" == "3" %}
+                                    class="active"
+                                {% endif %}
+
+                                ><a data-toggle="tab"
+                            {% else %}
+                                ><a style="color:grey;"
+                            {% endif %}
+                            href="#menu2">Quarta-feira</a></li>
+                    <li
+                            {% if main_plates.3|length > 0 %}
+                                {% if datev|date:"w" == "4" %}
+                                    class="active"
+                                {% endif %}
+
+                                ><a data-toggle="tab"
+                            {% else %}
+                                ><a style="color:grey;"
+                            {% endif %}
+                            href="#menu3">Quinta-feira</a></li>
+                    <li
+
+
+                            {% if main_plates.4|length > 0 %}
+                                {% if datev|date:"w" == "5" %}
+                                    class="active"
+                                {% endif %}
+                                ><a data-toggle="tab"
+                            {% else %}
+                                ><a style="color:grey;"
+                            {% endif %}
+                            href="#menu4">Sexta-feira</a></li>
+                    <li
+
+
+                            {% if main_plates.5|length > 0 %}
+                                 {% if datev|date:"w" == "6" %}
+                                    class="active"
+                                {% endif %}
+
+                                ><a data-toggle="tab"
+                            {% else %}
+                                ><a style="color:grey;"
+                            {% endif %}
+                            href="#menu5">Sábado</a></li>
+                    <li
+
+                            {% if main_plates.6|length > 0 %}
+                                {% if datev|date:"w" == "0" %}
+                                    class="active"
+                                {% endif %}
+
+                                ><a data-toggle="tab"
+                            {% else %}
+                                ><a style="color:grey;"
+                            {% endif %}
+                            href="#menu6">Domingo</a></li>
+                </ul>
+
+                <div class="tab-content">
+                  <div id="home" class="tab-pane fade
+                    {% if datev|date:"w" == "1" %}
+                        in active
+                    {% endif %}
+                    ">
+                    <h3>Pratos principais</h3>
+                      {% for canteen, value in main_plates.0.items %}
+                        <br><p>{{ canteen }}</p>
+                          {% for name, meal in value.items %}
+                              <h4><b>{{ name }}</b></h4>
+                              {% for description, food in meal.items %}
+                                  {% if food != None %}
+                                    {{ description }} - {{ food }}
+                                    <br>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endfor %}
+                          <br>
+                      {% endfor %}
+                  <p><a class="btn btn-primary btn-sm pull-right" href="/ementas/day=Monday">Ver mais</a></p>
+                  </div>
+                  <div id="menu1" class="tab-pane fade
+                    {% if datev|date:"w" == "2" %}
+                        in active
+                     {% endif %}
+                    ">
+                      <h3>Pratos principais</h3>
+                      {% for canteen, value in main_plates.1.items %}
+                        <br><p>{{ canteen }}</p>
+                          {% for name, meal in value.items %}
+                              <h4><b>{{ name }}</b></h4>
+                              {% for description, food in meal.items %}
+                                  {% if food != None %}
+                                    {{ description }} - {{ food }}
+                                    <br>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endfor %}
+                          <br>
+                      {% endfor %}
+                  <p><a class="btn btn-primary btn-sm pull-right" href="/ementas/day=Tuesday">Ver mais</a></p>
+                  </div>
+                  <div id="menu2" class="tab-pane fade
+                    {% if datev|date:"w" == "3" %}
+                        in active
+                     {% endif %}
+                    ">
+                      <h3>Pratos principais</h3>
+                      {% for canteen, value in main_plates.2.items %}
+                        <br><p>{{ canteen }}</p>
+                          {% for name, meal in value.items %}
+                              <h4><b>{{ name }}</b></h4>
+                              {% for description, food in meal.items %}
+                                  {% if food != None %}
+                                    {{ description }} - {{ food }}
+                                    <br>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endfor %}
+                          <br>
+                      {% endfor %}
+                    <p><a class="btn btn-primary btn-sm pull-right" href="/ementas/day=Wednesday">Ver mais</a></p>
+                  </div>
+                <div id="menu3" class="tab-pane fade
+                {% if datev|date:"w" == "4" %}
+                    in active
+                {% endif %}
+                ">
+                      <h3>Pratos principais</h3>
+                      {% for canteen, value in main_plates.3.items %}
+                        <br><p>{{ canteen }}</p>
+                          {% for name, meal in value.items %}
+                              <h4><b>{{ name }}</b></h4>
+                              {% for description, food in meal.items %}
+                                  {% if food != None %}
+                                    {{ description }} - {{ food }}
+                                    <br>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endfor %}
+                          <br>
+                      {% endfor %}
+                <p><a class="btn btn-primary btn-sm pull-right" href="/ementas/day=Thursday">Ver mais</a></p>
+                  </div>
+                    <div id="menu4" class="tab-pane fade
+                    {% if datev|date:"w" == "5" %}
+                        in active
+                    {% endif %}
+                    ">
+                      <h3>Pratos principais</h3>
+                      {% for canteen, value in main_plates.4.items %}
+                        <br><p>{{ canteen }}</p>
+                          {% for name, meal in value.items %}
+                              <h4><b>{{ name }}</b></h4>
+                              {% for description, food in meal.items %}
+                                  {% if food != None %}
+                                    {{ description }} - {{ food }}
+                                    <br>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endfor %}
+                          <br>
+                      {% endfor %}
+                    <p><a class="btn btn-primary btn-sm pull-right" href="/ementas/day=Friday">Ver mais</a></p>
+                  </div>
+                    <div id="menu5" class="tab-pane fade
+                    {% if datev|date:"w" == "6" %}
+                        in active
+                    {% endif %}
+                    ">
+                      <h3>Pratos principais</h3>
+                      {% for canteen, value in main_plates.5.items %}
+                        <br><p>{{ canteen }}</p>
+                          {% for name, meal in value.items %}
+                              <h4><b>{{ name }}</b></h4>
+                              {% for description, food in meal.items %}
+                                  {% if food != None %}
+                                    {{ description }} - {{ food }}
+                                    <br>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endfor %}
+                          <br>
+                      {% endfor %}
+                    <p><a class="btn btn-primary btn-sm pull-right" href="/ementas/day=Saturday">Ver mais</a></p>
+                  </div>
+                <div id="menu6" class="tab-pane fade
+                {% if datev|date:"w" == "0" %}
+                    in active
+                {% endif %}
+                ">
+                      <h3>Pratos principais</h3>
+                      {% for canteen, value in main_plates.6.items %}
+                        <br><p>{{ canteen }}</p>
+                          {% for name, meal in value.items %}
+                              <h4><b>{{ name }}</b></h4>
+                              {% for description, food in meal.items %}
+                                  {% if food != None %}
+                                    {{ description }} - {{ food }}
+                                    <br>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endfor %}
+                          <br>
+                      {% endfor %}
+                    <p><a class="btn btn-primary btn-sm pull-right" href="/ementas/day=Sunday">Ver mais</a></p>
+                  </div>
+                </div>
+            </div>
+            <br>
+
+            <h3 class="stitle">Notícias UA</h3><h6>Últimas publicações (Jornal Online)</h6>
+            <br>
+            <div class="row">
+            {% for singlenew in news %}
+                {% if forloop.counter0|divisibleby:"3" is True %}
+                    <div class="clearfix visible-lg-block"></div>
+                {% endif %}
+                <div class="col-md-4">
+                    <div class="panel panel-success newspanel">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" href="#collapse{{ forloop.counter }}" style="color: white !important"><b>{{ singlenew.title }}</b></a>
+                        </div>
+
+                        <div id="collapse{{ forloop.counter }}" class="panel-body collapse">
+                            {% if singlenew.description.1 %}
+                                {% autoescape off %}
+                                {{ singlenew.description.1 }}
+                                {% endautoescape %}
+                                <br>
+                                <br>
+                            {% endif %}
+                            {{ singlenew.description.0 }}
+                        </div>
+
+                        <div class="panel-footer"><small>Ver notícia na íntegra: <a href="{{ singlenew.link }}" style="color:black;"><u>{{ singlenew.link }}</u></a></small></div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

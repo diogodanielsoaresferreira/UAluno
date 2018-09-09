@@ -1,0 +1,174 @@
+{% extends "app/layout.html" %}
+
+{% block menuNavbar %}
+    <li><a href="{% url 'home' %}">Início</a></li>
+	<li><a href="{% url 'metereologia' %}">Metereologia</a></li>
+    <li><a href="{% url 'ementas' %}">Ementas</a></li>
+    <li><a href="{% url 'noticias' %}">Notícias</a></li>
+    <li class="active"><a href="{% url 'notas' %}">Notas</a></li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="page-header">
+                <h1>Notas</h1>
+                <p class="lead">Histórico das notas do aluno referentes às suas cadeiras na Universidade de Aveiro.</p>
+                <hr />
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="alert error" style="display: none; background-color: #f44336; color: white; transition: opacity 0.6s; text-align:center;">
+              <span class="closebtn" style="margin-left: 15px; color: white; font-weight: bold; border-radius: 20px; float: right; font-size: 22px; line-height: 20px; cursor: pointer; transition: 1s;"  onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+            <div class="alert success" style="display: none; background-color: #4CAF50; color: white; transition: opacity 0.6s; text-align:center;">
+              <span class="closebtn" style="margin-left: 15px; color: white; font-weight: bold; border-radius: 20px; float: right; font-size: 22px; line-height: 20px; cursor: pointer; transition: 1s;"  onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+
+            {% if grades %}
+                {% autoescape off %}
+                    {{ grades }}
+                {% endautoescape %}
+            {% else %}
+                <p>Não tens notas registadas. </p>
+                <p>Podes registar clicando no botão Adicionar nota.</p>
+            {% endif %}
+
+            <br>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addNotaModal">Adicionar nota</button>
+
+            <div class="modal fade" id="addNotaModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="notaform" action="/notas/" method="post">
+                            {% csrf_token %}
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                   <span aria-hidden="true">&times;</span>
+                                   <span class="sr-only">Close</span>
+                                </button>
+                                <h4 class="modal-title">Adicionar nota</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                {% if notaform.errors %}
+                                <p style="color: red;">Corrigue os erros abaixo.</p>
+                                {% endif %}
+
+                                <div class="field">
+                                    {{ notaform.nome_cadeira.errors }}
+                                    <label for="nomecadeira" class="tooltip-test" title="Nome da disciplina" style="font-size:16px;">* Nome da disciplina</label>
+                                    {{ notaform.nome_cadeira }}
+                                </div>
+
+                                <div class="field">
+                                    {{ notaform.ects.errors }}
+                                    <label for="ects" class="tooltip-test" title="ECTS da disciplina" style="font-size:16px;">* ECTS</label>
+                                    {{ notaform.ects }}
+                                </div>
+
+                                <div class="field">
+                                    {{ notaform.area.errors }}
+                                    <label for="area" class="tooltip-test" title="Area da disciplina" style="font-size:16px;">* Área</label>
+                                    {{ notaform.area }}
+                                </div>
+
+                                <div class="field">
+                                    {{ notaform.ano.errors }}
+                                    <label for="ano" class="tooltip-test" title="Ano da disciplina" style="font-size:16px;">* Ano</label>
+                                    {{ notaform.ano }}
+                                </div>
+
+                                <div class="field">
+                                    {{ notaform.semestre.errors }}
+                                    <label for="semestre" class="tooltip-test" title="Semestre da disciplina" style="font-size:16px;">* Semestre</label>
+                                    {{ notaform.semestre }}
+                                </div>
+
+                                <div class="field">
+                                    {{ notaform.nota.errors }}
+                                    <label for="nota" class="tooltip-test" title="Nota da disciplina" style="font-size:16px;">* Nota</label>
+                                    {{ notaform.nota }}
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="btn-group">
+                                    <div style="display: inline-block;">
+                                        <button type="submit" value="submit" class="btn btn-primary">Adicionar nota</button>
+                                    </div>
+                                    <div style="display: inline-block;">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+
+        var status = '{{status}}';
+
+        if(status=="success"){
+            var close = document.getElementsByClassName("alert success");
+            var i;
+            for (i = 0; i < close.length; i++) {
+
+                var div = close[i];
+
+                // When someone clicks on a close button
+                div.style.display = "block";
+                div.style.opacity = 1;
+                div.innerHTML = "<span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span>Nota adicionada com sucesso ";
+
+                // Hide the div after 6000ms (the same amount of milliseconds it takes to fade out)
+                setTimeout(function(){ div.style.display = "none"; }, 5000);
+            }
+        }
+
+        if(status=="error"){
+            var close = document.getElementsByClassName("alert error");
+            var i;
+            for (i = 0; i < close.length; i++) {
+
+                var div = close[i];
+
+                // When someone clicks on a close button
+                div.style.display = "block";
+                div.style.opacity = 1;
+                div.innerHTML = "<span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span>Erro no preenchimento do formulário ou nota já registada";
+
+                // Hide the div after 6000ms (the same amount of milliseconds it takes to fade out)
+                setTimeout(function(){ div.style.display = "none"; }, 5000);
+            }
+        }
+
+
+        var URL = "{%  url 'remove_course' %}"
+
+        $('.btnremove').bind('click', function(e) {
+            var clicked = $(this);
+
+            var data = {
+                'name_remove': clicked.val(),
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            }
+
+            $.post(URL, data, function(response){
+                if(response === 'success'){ alert('A cadeira foi removida.');  window.location.replace('/notas')}
+                else{ alert('Não foi possível remover a cadeira pretendida.'); }
+            });
+        });
+
+    </script>
+
+{% endblock %}

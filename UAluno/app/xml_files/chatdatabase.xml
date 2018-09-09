@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chat>
+    <message id="1" name="admin" timestamp="26/09/2017 09:44:00">
+        Bom dia pessoal.
+    </message>
+    <message id="2" name="user1" timestamp="26/09/2017 09:45:00">
+        O tempo parece estar bom para um trabalho de edc.
+    </message>
+    <message id="3" name="user2" timestamp="26/09/2017 09:46:00">
+        Vamos lá trabalhar!
+    </message>
+    
+</chat>
